@@ -46,11 +46,22 @@ TypeScript 能显著提升 Screeps 项目的开发体验和代码质量，但也
 - [我的 Screeps 代码](https://gitee.com/zhang-chuang-xin/ayaka-bot)
 - [HoHo 的 Screeps 代码](https://github.com/HoPGoldy/my-screeps-ai)
 
-<Coder :code="code" :editorStyles="{height: '200px'}"></Coder>
+<CodeEditor :model-options="modelOptions" :editor-styles="{height: '200px'}"></CodeEditor>
 
 <script setup>
 import {ref} from 'vue'
-import {Coder} from '@components/monaco-editor'
+import {CodeEditor} from '@components/monaco-editor'
 
-const code = ref('')
+const modelOptions = [
+    {
+        value: `const foo = 1;`,
+        language: 'typescript',
+        path: 'main.ts'
+    },
+    {
+        value: `const bar: number = 2;`,
+        language: 'typescript',
+        path: 'test.ts'
+    }
+]
 </script>

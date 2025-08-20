@@ -1,5 +1,5 @@
-import Editor from "./Editor.vue";
-import Coder from "./Coder.vue";
+import MonacoEditor from "./MonacoEditor.vue";
+import CodeEditor from "./CodeEditor.vue";
 
-export { Editor, Coder };
+export { MonacoEditor, CodeEditor };
 export * from "./types";

@@ -2,13 +2,23 @@ import { type editor } from "monaco-editor";
 import { CSSProperties } from "vue";
 
 /**
+ * 编辑器 model 配置
+ */
+export interface ModelOptions {
+  /** model 的内容 */
+  value: string;
+  /** model 的语言 */
+  language: string;
+  /** model 的路径 */
+  path: string;
+}
+
+/**
  * 编辑器组件 props
  */
-export interface EditorProps {
-  /** 编辑器当前的 model 的值 */
-  value: string;
-  /** 当前 model 的语言 */
-  language: string;
+export interface MonacoEditorProps {
+  /** 编辑器所有的 model 配置 */
+  modelOptions: ModelOptions[];
   /** 主题 */
   theme?: "light" | "vs-dark";
   /** 字体 */
