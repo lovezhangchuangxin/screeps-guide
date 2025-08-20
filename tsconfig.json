@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["docs/.vitepress/components/*"]
+    }
+  },
+  "include": ["docs/.vitepress/**/*.ts"]
+}
