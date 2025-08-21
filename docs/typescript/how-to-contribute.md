@@ -5,7 +5,7 @@
 本文档基于 `vitepress`，并封装了一个代码编辑器组件 `CodeEditor`
 效果如下，您可能在很多地方已经见过，
 
-<CodeEditor :model-options="modelOptions" :editor-styles="{height: '200px'}"></CodeEditor>
+<CodeEditor title="Screeps游戏代码" :model-options="modelOptions" :editor-styles="{height: '200px'}"></CodeEditor>
 
 <script setup>
 import {CodeEditor} from '@components/monaco-editor'
@@ -29,7 +29,11 @@ const modelOptions = [
 它的使用代码如下：
 
 ```vue
-<CodeEditor :model-options="modelOptions" :editor-styles="{ height: '200px' }">
+<CodeEditor
+  title="Screeps游戏代码"
+  :model-options="modelOptions"
+  :editor-styles="{ height: '200px' }"
+>
 </CodeEditor>
 
 <script setup>
@@ -56,10 +60,10 @@ const modelOptions = [
 
 未来它将支持的功能：
 
-- 优化样式
+- 优化样式，视图支持拉伸
 - 支持跳转到定义
 - 支持将更改保存到 localStorage
 - 支持更多的主题
 - 实现类似 Error Lens 插件的效果
 - 支持 Diff 编辑器
-- 支持导出图片
+- 支持导出图片、文件
