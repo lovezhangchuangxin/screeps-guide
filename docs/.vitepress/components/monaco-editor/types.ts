@@ -35,3 +35,17 @@ export interface MonacoEditorProps {
     event: editor.IModelContentChangedEvent
   ) => void;
 }
+
+/**
+ * 代码编辑器组件 props
+ */
+export interface CodeEditorProps {
+  /** 代码编辑器标题 */
+  title?: string;
+  /** 多文件配置 */
+  modelOptions: ModelOptions[];
+  /** 是否默认关闭 */
+  defaultClose?: boolean;
+  /** 编辑器样式 */
+  editorStyles?: CSSProperties;
+}

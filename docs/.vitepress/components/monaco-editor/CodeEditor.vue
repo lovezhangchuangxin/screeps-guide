@@ -45,23 +45,16 @@
 </template>
 
 <script setup lang="ts">
-import { CSSProperties, ref, toRefs, watchEffect } from "vue";
+import { ref, toRefs } from "vue";
 import MonacoEditor from "./MonacoEditor.vue";
-import { ModelOptions } from "./types";
-
-interface CodeEditorProps {
-  title?: string;
-  modelOptions: ModelOptions[];
-  defaultExpand?: boolean;
-  editorStyles?: CSSProperties;
-}
+import { CodeEditorProps } from "./types";
 
 const props = defineProps<CodeEditorProps>();
-const { title = "Screeps游戏代码", defaultExpand } = props;
+const { title = "Screeps游戏代码", defaultClose } = props;
 const { modelOptions, editorStyles } = toRefs(props);
 
 const editorRef = ref<InstanceType<typeof MonacoEditor> | null>(null);
-const expand = ref(defaultExpand);
+const expand = ref(!defaultClose);
 const currentPath = ref(modelOptions.value[0]?.path || "");
 
 const clickTitle = () => {
