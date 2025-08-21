@@ -6,7 +6,7 @@
 
 那么，Memory 包含哪些类型？
 
-<CodeEditor :model-options="memoryTypesOptions" :editor-styles="{height: '180px'}"></CodeEditor>
+<CodeEditor title="Screeps中的Memory类型" :model-options="memoryTypesOptions" :editor-styles="{height: '180px'}"></CodeEditor>
 
 在上面的代码示例中，将鼠标悬停在 `memory` 变量上，可以看到以下几种 Memory 类型：
 
@@ -28,7 +28,7 @@ TypeScript 支持同名接口的自动合并（Declaration Merging）。当多�
 
 结论：**TypeScript 会自动合并同名的全局接口声明。**
 
-<CodeEditor :model-options="typeMergeOptions" :editor-styles="{height: '150px'}"></CodeEditor>
+<CodeEditor title="同名全局接口的声明合并" :model-options="typeMergeOptions" :editor-styles="{height: '150px'}"></CodeEditor>
 
 ## 全局接口
 
@@ -40,7 +40,7 @@ TypeScript 支持同名接口的自动合并（Declaration Merging）。当多�
 
 例如，下面的例子中，由于 `main.ts` 文件加上了 `export`，它变成了模块作用域，与 `person.ts` 的全局作用域隔离，因此接口类型不会自动合并。
 
-<CodeEditor :model-options="moduleTypeOptions" :editor-styles="{height: '200px'}"></CodeEditor>
+<CodeEditor title="模块作用域与全局作用域" :model-options="moduleTypeOptions" :editor-styles="{height: '200px'}"></CodeEditor>
 
 ## 在模块中声明全局接口
 
@@ -56,13 +56,13 @@ TypeScript 支持同名接口的自动合并（Declaration Merging）。当多�
 
 如下例所示，虽然 `main.ts` 是一个模块，但在 `declare global` 语句块中声明的 `Person` 类型依然会作为全局类型，与 `person.ts` 中的全局类型合并。
 
-<CodeEditor :model-options="moduleDeclareGlobalOptions" :editor-styles="{height: '220px'}"></CodeEditor>
+<CodeEditor title="模块中声明全局接口" :model-options="moduleDeclareGlobalOptions" :editor-styles="{height: '220px'}"></CodeEditor>
 
 ## Memory 类型定义实践
 
 通过以上例子，我们可以得出结论：**在模块中使用 `declare global` 扩展 Memory 类型，是 TypeScript 项目中定义 Screeps Memory 的最佳实践。**
 
-<CodeEditor :model-options="screepsMemoryOptions" :editor-styles="{height: '250px'}"></CodeEditor>
+<CodeEditor title="Screeps中定义Memory" :model-options="screepsMemoryOptions" :editor-styles="{height: '250px'}"></CodeEditor>
 
 <script setup>
 import {CodeEditor} from '@components/monaco-editor'
