@@ -1,3 +1,9 @@
+---
+next:
+  text: "前言"
+  link: "./introduce"
+---
+
 # Screeps TypeScript 指南
 
 本指南旨在帮助初学者在 Screeps 中更好地使用 TypeScript（以后简称 ts），提高开发效率和代码质量。所有内容均为个人经验总结，不当之处欢迎指正。
