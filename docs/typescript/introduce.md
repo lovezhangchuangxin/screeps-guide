@@ -6,7 +6,7 @@
 
 1. [定义 Memory 类型](./define-memory.md)
 2. [扩展原型对象](./extend-prototype.md)
-3. ...
+3. [类型断言和收束](./type-assertion.md)
 4. [如何贡献文档](./how-to-contribute.md)
 
 文档配有丰富的代码示例，您可直接在页面中交互体验，快速掌握相关语法与技巧。

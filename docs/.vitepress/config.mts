@@ -19,6 +19,7 @@ export default defineConfig({
       { text: "前言", link: "/typescript/introduce" },
       { text: "定义 Memory 类型", link: "/typescript/define-memory" },
       { text: "扩展原型对象", link: "/typescript/extend-prototype" },
+      { text: "类型断言和收束", link: "/typescript/type-assertion" },
       { text: "如何贡献文档", link: "/typescript/how-to-contribute" },
     ],
 
