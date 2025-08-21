@@ -2,6 +2,7 @@
 import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { nextTick, provide } from "vue";
+import PageViewStat from "./PageViewStat.vue";
 
 const { isDark } = useData();
 
@@ -41,7 +42,11 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
 </script>
 
 <template>
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #home-hero-image>
+      <PageViewStat />
+    </template>
+  </DefaultTheme.Layout>
 </template>
 
 <style>
