@@ -51,7 +51,7 @@ export const useModels = (
 
   // 清理所有 model
   const disposeAllModel = () => {
-    Object.values(models.value).forEach((model) => model.dispose());
+    Object.values(models).forEach((model) => model.dispose());
   };
 
   return {
