@@ -1,5 +1,5 @@
 <template>
-  <div class="editor-wrapper" :style="{ height: '200px' }">
+  <div class="editor-wrapper" :style="style">
     <!-- 加载中 -->
     <Loading v-if="!isEditorReady">
       <template #loading>
@@ -42,6 +42,7 @@ const {
   fontSize,
   automaticLayout,
   onValueChange,
+  style,
 } = toRefs(props);
 
 const containerRef = ref<HTMLDivElement | null>(null);

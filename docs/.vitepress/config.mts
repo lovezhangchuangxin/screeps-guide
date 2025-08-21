@@ -11,17 +11,15 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "首页", link: "/" },
-      { text: "ts指南", link: "/typescript" },
+      { text: "ts指南", link: "/typescript/index" },
     ],
 
     sidebar: [
-      {
-        text: "ts指南",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
-      },
+      { text: "Screeps TypeScript 指南", link: "/typescript/index" },
+      { text: "前言", link: "/typescript/introduce" },
+      { text: "定义 Memory 类型", link: "/typescript/define-memory" },
+      { text: "扩展原型对象", link: "/typescript/extend-prototype" },
+      { text: "如何贡献文档", link: "/typescript/how-to-contribute" },
     ],
 
     socialLinks: [
@@ -45,6 +43,7 @@ export default defineConfig({
     resolve: {
       alias: {
         "@components": resolve(__dirname, "./components"),
+        "@codes": resolve(__dirname, "./codes"),
       },
     },
   },

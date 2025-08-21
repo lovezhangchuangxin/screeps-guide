@@ -62,7 +62,7 @@ const { modelOptions, editorStyles } = toRefs(props);
 
 const editorRef = ref<InstanceType<typeof MonacoEditor> | null>(null);
 const expand = ref(defaultExpand);
-const currentPath = ref(modelOptions.value[0].path);
+const currentPath = ref(modelOptions.value[0]?.path || "");
 
 const clickTitle = () => {
   expand.value = !expand.value;
@@ -90,7 +90,6 @@ const changeModel = (path: string) => {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   background: #fafbfc;
-  overflow: hidden;
 
   .header {
     display: flex;
