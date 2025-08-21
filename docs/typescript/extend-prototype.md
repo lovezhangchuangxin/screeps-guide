@@ -28,7 +28,7 @@ Screeps 的设计也是如此：例如，`Creep` 构造函数的类型是 `Creep
 
 `Game` 是一个单例对象，虽然名称以大写字母开头，但它并不是构造函数。与 `Creep` 不同，`Game` 的类型就是 `Game`，而不是 `GameConstructor`。
 
-<CodeEditor title="扩展 Game" :model-options="extendGameOptions" :editor-styles="{height: '420px'}"></CodeEditor>
+<CodeEditor title="扩展 Game" :model-options="extendGameOptions" :editor-styles="{height: '290px'}"></CodeEditor>
 
 我们可以在 `Game` 对象上挂载全局方法和属性，便于数据共享和统一管理。
 
