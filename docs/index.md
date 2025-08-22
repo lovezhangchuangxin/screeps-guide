@@ -21,4 +21,6 @@ features:
     details: 丰富的类型提示和智能补全，让开发 Screeps 逻辑和调用 API 更高效。
   - title: 易于维护与协作
     details: 明确的类型定义让代码更易读，方便团队协作和长期维护。
+  - title: 社区讨论
+    details: 通过 GitHub Discussions 与社区成员交流经验、提问问题、分享创意。
 ---

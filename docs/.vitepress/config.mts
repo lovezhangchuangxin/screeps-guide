@@ -12,6 +12,7 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       { text: "ts指南", link: "/typescript/index" },
+      { text: "社区", link: "/how-to-enable-discussions" },
     ],
 
     sidebar: [
@@ -21,6 +22,7 @@ export default defineConfig({
       { text: "扩展原型对象", link: "/typescript/extend-prototype" },
       { text: "类型断言和收束", link: "/typescript/type-assertion" },
       { text: "如何贡献文档", link: "/typescript/how-to-contribute" },
+      { text: "如何开启 GitHub Discussions", link: "/how-to-enable-discussions" },
     ],
 
     socialLinks: [

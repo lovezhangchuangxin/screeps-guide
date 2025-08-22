@@ -49,7 +49,13 @@ pnpm docs:preview
 
 ## 贡献
 
-欢迎通过提交 Pull Request 或 Issue 参与本指南的完善。
+欢迎通过以下方式参与本指南的完善：
+
+- 提交 **Pull Request** 来改进文档内容
+- 创建 **Issue** 报告问题或建议新功能  
+- 参与 **GitHub Discussions** 进行社区讨论和经验分享
+
+关于如何开启和使用 GitHub Discussions，请参阅[如何开启 GitHub Discussions](https://lovezhangchuangxin.github.io/screeps-guide/how-to-enable-discussions.html) 文档。
 
 ## 许可证
 
