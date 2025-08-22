@@ -10,6 +10,8 @@ export const useModels = (
   monacoRef: ShallowRef<Monaco | null>,
   modelOptions: Ref<ModelOptions[]>
 ) => {
+  // 随机生的目录，拼在文件名前面，防止不同 editor 的多个 model 的 path 重复
+  const randomPwd = Math.random().toString(36).slice(2);
   // 记录创建的 models，只会增加不会删除，方便后续找回
   const models = shallowReactive<Record<string, editor.ITextModel>>({});
 
@@ -27,10 +29,12 @@ export const useModels = (
         model.setValue(option.value);
       } else {
         // 创建并存储 model
+        const path = `file:///${randomPwd}/${option.path}`;
+
         const model = monaco.editor.createModel(
           option.value,
           option.language || "typescript",
-          monaco.Uri.parse(option.path)
+          monaco.Uri.parse(path)
         );
         models[option.path] = model;
       }

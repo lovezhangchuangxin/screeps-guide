@@ -39,7 +39,7 @@
 
 在 TypeScript 中，如果一个函数返回 `boolean`，可以用 `is` 关键字标注返回值为 `true` 时的类型。
 
-如下例，`utils4.ts` 中定义了类型保护函数 `isContainer`，用于判断建筑是否为容器类型。在 `main4.ts` 中，通过该函数过滤建筑。
+如下例，`utils.ts` 中定义了类型保护函数 `isContainer`，用于判断建筑是否为容器类型。在 `main.ts` 中，通过该函数过滤建筑。
 
 <CodeEditor title="类型收束自动推断类型" :model-options="typeNarrowingOptions" :editor-styles="{height: '250px'}"></CodeEditor>
 
@@ -76,7 +76,7 @@ type E = BuildableStructureConstant
 export {}
         `,
         language: 'typescript',
-        path: 'main1.ts'
+        path: 'main.ts'
     },
 ]
 
@@ -94,7 +94,7 @@ const containers = room.find(FIND_STRUCTURES, {
 export {}
         `,
         language: 'typescript',
-        path: 'main2.ts'
+        path: 'main.ts'
     }
 ]
 
@@ -109,14 +109,14 @@ const containers = room.find(FIND_STRUCTURES, {
 export {}
         `,
         language: 'typescript',
-        path: 'main3.ts'
+        path: 'main.ts'
     }
 ]
 
 const typeNarrowingOptions = [
     {
         value: `
-import { isContainer } from './utils4'
+import { isContainer } from './utils'
 const room = Game.rooms['']
 const containers = room.find(FIND_STRUCTURES, {
     filter: isContainer
@@ -125,7 +125,7 @@ type R = Expect<Equal<typeof containers, StructureContainer[]>>
 export {}
         `,
         language: 'typescript',
-        path: 'main4.ts'
+        path: 'main.ts'
     },
     {
         value: `export function isContainer(structure: AnyStructure): structure is StructureContainer {
@@ -141,14 +141,14 @@ function test() {
 }
         `,
         language: 'typescript',
-        path: 'utils4.ts'
+        path: 'utils.ts'
     }
 ]
 
 
 const generalJudgeOptions = [
     {
-        value: `import { isStructureType } from './utils5'
+        value: `import { isStructureType } from './utils'
 const room = Game.rooms['']
 const containers = room.find(FIND_STRUCTURES, {
     filter: isStructureType(STRUCTURE_CONTAINER)
@@ -161,7 +161,7 @@ type R2 = Expect<Equal<typeof ramOrWalls, (StructureRampart | StructureWall)[]>>
 
 export {}`,
         language: 'typescript',
-        path: 'main5.ts' 
+        path: 'main.ts' 
     }, 
     {
         value: `export function isStructureType<T extends StructureConstant>(
@@ -175,7 +175,7 @@ export {}`,
     }
 }`,
         language: 'typescript',
-        path: 'utils5.ts'
+        path: 'utils.ts'
     }
 ]
 </script>

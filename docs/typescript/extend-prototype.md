@@ -70,7 +70,7 @@ const p = new Person('keqing', 18)
 console.log(p.getInfo())
         `,
         language: 'typescript',
-        path: 'main1.ts'
+        path: 'main.ts'
     }
 ]
 
@@ -97,7 +97,7 @@ Creep.creepCount++
 export {}
         `,
         language: 'typescript',
-        path: 'main2.ts'
+        path: 'main.ts'
     }
 ]
 
@@ -118,7 +118,7 @@ const creeps = Game.getMyCreeps('W1N1');
 export {}
         `,
         language: 'typescript',
-        path: 'main3.ts'
+        path: 'main.ts'
     }
 ]
 
