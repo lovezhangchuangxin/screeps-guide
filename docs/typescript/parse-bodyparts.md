@@ -59,7 +59,8 @@ import('@codes/typescript/parseStrToBody.ts?raw').then(({default: code}) => {
 import { parseStrToBody } from './utils';
 
 // 鼠标放在变量或者函数上有类型提示，可以清楚看到解析后的结果
-const body = parseStrToBody('t10r10h20m10');
-    `;
+const body1 = parseStrToBody('t10r10h20m10');
+const body2 = parseStrToBody('w10cm10');
+`;
 })
 </script>
