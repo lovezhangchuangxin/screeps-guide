@@ -2,10 +2,10 @@
 
 这是一个关于 Screeps MMO 策略游戏的 typescript 指南，包括：
 
-- ts 简单入门
-- screeps 中如何扩展全局类型
-- 如何扩展原型
-- 类型断言
+1. [定义 Memory 类型](docs/typescript/define-memory.md)
+2. [扩展原型对象](docs/extend-prototype.md)
+3. [类型断言与类型收束](docs/type-assertion.md)
+4. [如何贡献文档](docs/how-to-contribute.md)
 
 ## 安装
 
