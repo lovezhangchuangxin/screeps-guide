@@ -64,6 +64,16 @@ onMounted(async () => {
     .then((monaco) => {
       monacoRef.value = monaco;
 
+      // 设置 TypeScript 编译选项
+      monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+        target: monaco.languages.typescript.ScriptTarget.ESNext,
+        allowNonTsExtensions: true,
+        moduleResolution:
+          monaco.languages.typescript.ModuleResolutionKind.NodeJs,
+        experimentalDecorators: true,
+        emitDecoratorMetadata: true,
+      });
+
       // 导入 Screeps 的类型声明文件
       import("./screeps.d.txt?raw").then(({ default: dts }) =>
         monaco.languages.typescript.typescriptDefaults.addExtraLib(

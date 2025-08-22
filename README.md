@@ -3,9 +3,11 @@
 这是一个关于 Screeps MMO 策略游戏的 typescript 指南，包括：
 
 1. [定义 Memory 类型](docs/typescript/define-memory.md)
-2. [扩展原型对象](docs/extend-prototype.md)
-3. [类型断言与类型收束](docs/type-assertion.md)
-4. [如何贡献文档](docs/how-to-contribute.md)
+2. [扩展原型对象](docs/typescript/extend-prototype.md)
+3. [类型断言和收束](docs/typescript/type-assertion.md)
+4. [使用装饰器](docs/typescript/decorator.md)
+5. [解析身体部件](docs/typescript/parse-bodyparts.md)
+6. [如何贡献文档](docs/typescript/how-to-contribute.md)
 
 ## 安装
 
