@@ -29,8 +29,8 @@ export const useModels = (
         // 创建并存储 model
         const model = monaco.editor.createModel(
           option.value,
-          option.language || "typescript"
-          // monaco.Uri.parse(option.path)
+          option.language || "typescript",
+          monaco.Uri.parse(option.path)
         );
         models[option.path] = model;
       }

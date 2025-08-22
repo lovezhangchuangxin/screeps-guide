@@ -24,7 +24,7 @@
 
 TypeScript 支持同名接口的自动合并（Declaration Merging）。当多个文件中声明了同名的全局接口时，TypeScript 会将它们的属性合并到一起。
 
-例如，`main.ts` 中定义了 `Person` 接口只包含 `name` 字段，而 `person.ts` 中又定义了同名接口并添加了 `age` 字段。最终，`Person` 类型会同时拥有 `name` 和 `age` 两个属性。
+例如，`main2.ts` 中定义了 `Person` 接口只包含 `name` 字段，而 `person2.ts` 中又定义了同名接口并添加了 `age` 字段。最终，`Person` 类型会同时拥有 `name` 和 `age` 两个属性。
 
 结论：**TypeScript 会自动合并同名的全局接口声明。**
 
@@ -38,7 +38,7 @@ TypeScript 支持同名接口的自动合并（Declaration Merging）。当多�
 
 只有没有导入导出语句的文件，其接口类型才会被视为全局接口，可以自动合并。
 
-例如，下面的例子中，由于 `main.ts` 文件加上了 `export`，它变成了模块作用域，与 `person.ts` 的全局作用域隔离，因此接口类型不会自动合并。
+例如，下面的例子中，由于 `main3.ts` 文件加上了 `export`，它变成了模块作用域，与 `person3.ts` 的全局作用域隔离，因此接口类型不会自动合并。
 
 <CodeEditor title="模块作用域与全局作用域" :model-options="moduleTypeOptions" :editor-styles="{height: '200px'}"></CodeEditor>
 
@@ -54,7 +54,7 @@ TypeScript 支持同名接口的自动合并（Declaration Merging）。当多�
 
 **`declare global` 可以让你在模块中声明全局类型。**（注意：只有有导入或导出语句的文件才是模块）
 
-如下例所示，虽然 `main.ts` 是一个模块，但在 `declare global` 语句块中声明的 `Person` 类型依然会作为全局类型，与 `person.ts` 中的全局类型合并。
+如下例所示，虽然 `main4.ts` 是一个模块，但在 `declare global` 语句块中声明的 `Person` 类型依然会作为全局类型，与 `person4.ts` 中的全局类型合并。
 
 <CodeEditor title="模块中声明全局接口" :model-options="moduleDeclareGlobalOptions" :editor-styles="{height: '220px'}"></CodeEditor>
 
@@ -77,7 +77,7 @@ const memoryTypesOptions = [
     {
         value: codeMemoryTypes,
         language: 'typescript',
-        path: 'main.ts',
+        path: 'main1.ts',
     },
 ]
 
@@ -91,7 +91,7 @@ const p: Person = {
 };
 `,
         language: 'typescript',
-        path: 'main.ts',
+        path: 'main2.ts',
     },
     {
         value: `
@@ -100,14 +100,14 @@ interface Person {
 }
 `,
         language: 'typescript',
-        path: 'person.ts',
+        path: 'person2.ts',
     }
 ]
 
 const moduleTypeOptions = [
-   {...typeMergeOptions[0], value: typeMergeOptions[0].value + '\nexport {}'},
-   {...typeMergeOptions[1]}
-] 
+   {...typeMergeOptions[0], value: typeMergeOptions[0].value + '\nexport {}', path: 'main3.ts'},
+   {...typeMergeOptions[1], path: 'person3.ts'}
+]
 
 const moduleDeclareGlobalOptions = [
     {
@@ -122,9 +122,9 @@ const p: Person = {
 export {}
 `,
         language: 'typescript',
-        path: 'main.ts',
+        path: 'main4.ts',
     },
-    {...typeMergeOptions[1]}
+    {...typeMergeOptions[1], path: 'person4.ts'}
 ]
 
 const screepsMemoryOptions = [

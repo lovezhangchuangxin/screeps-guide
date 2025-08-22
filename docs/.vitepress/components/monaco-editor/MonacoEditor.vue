@@ -71,6 +71,14 @@ onMounted(async () => {
           "screeps.d.ts"
         )
       );
+
+      // 导入工具类型
+      import("./utils/utilTypes.d.ts?raw").then(({ default: dts }) =>
+        monaco.languages.typescript.typescriptDefaults.addExtraLib(
+          dts,
+          "utils.d.ts"
+        )
+      );
     })
     .catch((error) => {
       console.error("Error loading Monaco Editor:", error);
