@@ -88,6 +88,7 @@ onMounted(async () => {
 // 销毁 editor 和 models
 onUnmounted(() => {
   editorRef.value?.dispose();
+  editorRef.value = null;
   disposeAllModel();
 });
 
@@ -108,11 +109,17 @@ watchEffect(() => {
     fontSize: fontSize.value || 16,
     automaticLayout: automaticLayout.value || true,
   });
+
   editorRef.value.onDidChangeModelContent((event) => {
     if (onValueChange.value) {
       onValueChange.value(editorRef.value?.getValue() || "", event);
     }
   });
+
+  // 解决当前 model 显示时其他引用的 model 还没加载的问题
+  setTimeout(() => {
+    editorRef.value?.setValue(firstModel.getValue());
+  }, 10);
 
   isEditorReady.value = true;
 });
