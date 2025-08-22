@@ -143,11 +143,9 @@ defineExpose({
 .editor-wrapper {
   position: relative;
   height: 100%;
-  z-index: 10000000;
 }
 
 .editor-container {
   height: 100%;
-  z-index: 100;
 }
 </style>
