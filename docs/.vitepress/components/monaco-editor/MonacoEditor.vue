@@ -57,6 +57,12 @@ const { models, visiableModels, getModelPath, disposeAllModel } = useModels(
 );
 const { viewStates, changeModel } = useChangeModel();
 
+loader.config({
+  paths: {
+    vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs",
+  },
+});
+
 // 获取 monaco
 onMounted(async () => {
   const cancelable = loader.init();
